@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>XHR sample</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+</head>
+<body>
+
+	<div class="request">
+		<button class="request_button" data-url="./test-api/A.php">Send request to A</button>
+		<button class="request_button" data-url="./test-api/B.php">Send request to B</button>
+		<ul class="request_onGoing"></ul>
+		<button class="request_cancel" data-url="./test-api/A.php">Cancel A</button>
+		<button class="request_cancel" data-url="./test-api/B.php">Cancel B</button>
+		<button class="request_cancelAll">Cancel all</button>
+	</div>
+
+	<ul class="responseLog"></ul>
+
+	<script src="index.js" type="module"></script>
+</body>
+</html>
+
+<!-- <li>
+	<p class="request_time"></p>
+	<button class="request_cancel">Cancel</button>
+</li> -->

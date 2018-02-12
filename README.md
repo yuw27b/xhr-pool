@@ -1,0 +1,1 @@
+# XHR wrapper module sample
