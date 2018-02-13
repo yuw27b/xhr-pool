@@ -7,16 +7,29 @@
 </head>
 <body>
 
-	<div class="request">
-		<button class="request_button" data-url="./test-api/A.php">Send request to A.php</button>
-		<button class="request_button" data-url="./test-api/B.php">Send request to B.php</button>
-		<ul class="request_onGoing"></ul>
-		<button class="request_cancel" data-url="./test-api/A.php">Cancel A.php</button>
-		<button class="request_cancel" data-url="./test-api/B.php">Cancel B.php</button>
-		<button class="request_cancelAll">Cancel all</button>
-	</div>
+	<div class="content">
+		<h1>XHR client cancel sample</h1>
+		<div class="request">
+			<button class="request_button" data-url="./test-api/A.php">Send request to A.php</button>
+			<button class="request_button" data-url="./test-api/B.php">Send request to B.php</button>
 
-	<ul class="responseLog"></ul>
+			<div class="pendingList">
+				<h2>Pending request list</h2>
+				<ul class="pendingList_ul"></ul>
+			</div>
+
+			<button class="request_cancel" data-url="./test-api/A.php">Cancel A.php</button>
+			<button class="request_cancel" data-url="./test-api/B.php">Cancel B.php</button>
+			<button class="request_cancelAll">Cancel all</button>
+		</div>
+
+		<div class="responseLog">
+			<h2>Response log</h2>
+			<ul class="responseLog_ul"></ul>
+		</div>
+
+		<button class="clear_button">Clear response log</button>
+	</div>
 
 	<script src="index.js" type="module"></script>
 </body>
