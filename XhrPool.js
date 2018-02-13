@@ -3,7 +3,7 @@ class XhrPool {
     this.requestQue = [];
   }
 
-  sendRequest(url) {
+  sendGetRequest(url) {
     return new Promise((resolve, reject) => {
       if (this.requestQue.length >= 6) {
         reject('Xhr que is full');

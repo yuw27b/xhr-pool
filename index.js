@@ -10,7 +10,7 @@ const clearButton = document.querySelector('.clear_button');
 requestButton.forEach(el => {
   el.addEventListener('click', (e) => {
     const url = e.currentTarget.dataset.url;
-    const request = xhrPool.sendRequest(url);
+    const request = xhrPool.sendGetRequest(url);
     updateRequestList();
     request.then((res) => {
       addResponseLog(res);
