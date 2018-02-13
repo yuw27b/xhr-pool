@@ -35,18 +35,19 @@ cancelAllButton.addEventListener('click', () => {
 });
 
 const updateRequestList = () => {
-  while (requestListContainer.firstChild) {
-    requestListContainer.removeChild(requestListContainer.firstChild);
-  }
-  xhrPool.requestList().forEach(req => {
-    const el = document.createElement('li');
-    el.appendChild(document.createTextNode(`${req.method} ${req.url}`));
-    requestListContainer.appendChild(el);
+  document.querySelectorAll('.request_onGoing > li').forEach(el => {
+    el.remove();
   });
+  const requestListItems = xhrPool.requestList().map(req => {
+    const el = document.createElement('li');
+    el.append(`${req.method} ${req.url}`);
+    return el;
+  });
+  requestListContainer.append(...requestListItems);
 }
 
 const addResponseLog = (res => {
   const el = document.createElement('li');
-  el.appendChild(document.createTextNode(res.timestamp));
-  responseLogContainer.appendChild(el);
+  el.append(res.timestamp);
+  responseLogContainer.append(el);
 });
